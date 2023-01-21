@@ -19,7 +19,8 @@ class _DefButtonsState extends State<DefButtons> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MaterialButton(onPressed:(){},child: Text('بحث'),color: Colors.red.withOpacity(0.5),shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(13.5))),
+            MaterialButton(onPressed:(){},child: Text('بحث'),color: Colors.orange,shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(13.5))),
+            defPadding,
             MaterialButton(onPressed:(){},child: Text('اعادة تعيين'),shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(13.5),side: BorderSide(color: Colors.black)),),
 
           ],
