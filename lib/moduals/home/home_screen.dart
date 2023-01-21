@@ -24,30 +24,165 @@ class Home extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Column(
-          children:  [
-       const    SliderShow(),
+          children: [
+            const SliderShow(),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('مرحبا بك في مناهج التعليم في سلطنة عمان',style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 20,fontWeight: FontWeight.bold),),
+              child: Text(
+                'مرحبا بك في مناهج التعليم في سلطنة عمان',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
             ),
             Container(
-             decoration: BoxDecoration(
-               color: Colors.grey.withOpacity(0.5)
-             ),
-             child: Expanded(
-               child: Column(
-                 children: [
-                   const  FiltrationCollections(),
-                   DefButtons(),
-                  
-                 ],
-               ),
-             ),
-           )
+              decoration: BoxDecoration(color: Colors.grey.withOpacity(0.5)),
+              child: Expanded(
+                child: Column(
+                  children: [
+                    const FiltrationCollections(),
+                    DefButtons(),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 7,
+            ),
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: Row(
+                children: [
+                  Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 150,
+                          width: 100,
+                          decoration: BoxDecoration(color: Colors.red),
+                          child: Image.asset(
+                            'assets/images/image1.jpg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: AlignmentDirectional.center,
+                        height: 30,
+                        width: 100,
+                        decoration: BoxDecoration(color: Colors.cyan),
+                        child: Text(
+                          'رياض الأطفال',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 2.5,
+                  ),
+                  Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: [
+                      SizedBox(
+                        width: 2.5,
+                      ),
 
+                      Expanded(
+                        child: Container(
+                          height: 150,
+                          width: 100,
+                          decoration: BoxDecoration(color: Colors.red),
+                          child: Image.asset(
+                            'assets/images/image2.jpg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: AlignmentDirectional.center,
+                        height: 30,
+                        width: 100,
+                        decoration: BoxDecoration(color: Colors.cyan),
+                        child: Text(
+                          'التعليم الاساسي (1)',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 2.5,
+                  ),
+                  Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 150,
+                          width: 100,
+                          decoration: BoxDecoration(color: Colors.red),
+                          child: Image.asset(
+                            'assets/images/image3.jpg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: AlignmentDirectional.center,
+                        height: 30,
+                        width: 100,
+                        decoration: BoxDecoration(color: Colors.cyan),
+                        child: Text(
+                          'التعليم الاساسي (2)',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),
+                        ),
+                      )
+                    ],
+                  ),
 
+                  SizedBox(
+                    width: 2.5,
+                  ),
+                  Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 150,
+                          width: 100,
+                          decoration: BoxDecoration(color: Colors.red),
+                          child: Image.asset(
+                            'assets/images/image4.jpg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: AlignmentDirectional.center,
+                        height: 30,
+                        width: 100,
+                        decoration: BoxDecoration(color: Colors.cyan),
+                        child: Text(
+                          'التعليم مابعد الاساسي ',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),
+                        ),
+                      )
+                    ],
+                  ),
 
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -85,19 +220,16 @@ Widget defualtBottomNavigationBar({
   required BuildContext context,
 }) =>
     Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 1.0, vertical: 1.0),
-          child: GNav(
-            gap: 7,
-            onTabChange: onTabChange,
-            selectedIndex: 0,
-            backgroundColor: Colors.black,
-            curve: Curves.linear,
-            activeColor: Colors.cyan,
-            color: Colors.grey,
-            textStyle: Theme.of(context).textTheme.subtitle2!.copyWith(
-                fontSize: 16.0, color: Colors.amber, fontWeight: FontWeight.bold),
-            padding: const EdgeInsets.all(16),
-            tabs: tabs,
-          ),
-        ));
+        child: GNav(
+      gap: 7,
+      onTabChange: onTabChange,
+      selectedIndex: 0,
+      backgroundColor: Colors.black,
+      curve: Curves.linear,
+      activeColor: Colors.cyan,
+      color: Colors.grey,
+      textStyle: Theme.of(context).textTheme.subtitle2!.copyWith(
+          fontSize: 16.0, color: Colors.amber, fontWeight: FontWeight.bold),
+      padding: const EdgeInsets.all(16),
+      tabs: tabs,
+    ));
